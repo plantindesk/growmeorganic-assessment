@@ -1,0 +1,114 @@
+@import 'tailwindcss'
+
+@layer components {
+  /* DataTable overrides */
+  .artwork-datatable .p-datatable-wrapper {
+    @apply rounded-none;
+  }
+
+  .artwork-datatable .p-datatable-table {
+    @apply border-collapse;
+  }
+
+  .artwork-datatable .p-paginator {
+    @apply bg-gray-50 border-t border-gray-200 py-3 px-4;
+  }
+
+  .artwork-datatable .p-paginator-page.p-highlight {
+    @apply bg-indigo-600 text-white;
+  }
+
+  .artwork-datatable .p-paginator-current {
+    @apply text-gray-500 text-sm;
+  }
+
+  /* Force flex on header checkbox container - more specific selector */
+  .p-datatable .p-datatable-thead > tr > th .flex {
+    display: flex !important;
+  }
+
+  /* Checkbox styling */
+  .p-checkbox .p-checkbox-box {
+    @apply w-5 h-5 border-2 border-gray-300 rounded transition-colors;
+  }
+
+  .p-checkbox .p-checkbox-box.p-highlight {
+    @apply bg-indigo-600 border-indigo-600;
+  }
+
+  .p-checkbox:not(.p-disabled):hover .p-checkbox-box {
+    @apply border-indigo-400;
+  }
+
+  /* InputNumber styling */
+  .p-inputnumber .p-inputtext {
+    @apply border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200;
+  }
+
+  /* Button styling */
+  .p-button.p-button-text {
+    @apply text-gray-600 hover:bg-gray-100;
+  }
+
+  .p-button.p-button-sm {
+    @apply text-sm py-1.5 px-3;
+  }
+
+  /* Overlay panel */
+  .p-overlaypanel {
+    @apply shadow-xl border border-gray-200 rounded-lg;
+  }
+
+  .p-overlaypanel .p-overlaypanel-content {
+    @apply p-0;
+  }
+
+  .p-overlaypanel::before,
+  .p-overlaypanel::after {
+    @apply border-b-white;
+  }
+
+  /* Loading overlay */
+  .p-datatable-loading-overlay {
+    @apply bg-white/80 backdrop-blur-sm;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════ */
+/* CUSTOM ANIMATIONS */
+/* ═══════════════════════════════════════════════════════════════════════════════ */
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════ */
+/* SCROLLBAR STYLING */
+/* ═══════════════════════════════════════════════════════════════════════════════ */
+
+@layer base {
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full hover:bg-gray-400;
+  }
+}
