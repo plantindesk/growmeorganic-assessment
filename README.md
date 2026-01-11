@@ -32,7 +32,7 @@ A React-based web application that displays artworks from the Art Institute of C
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/plantindesk/growmeorganic-assessment.git
 cd growmeorganic-assessment
 ```
 
