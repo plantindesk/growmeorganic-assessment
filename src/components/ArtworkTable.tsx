@@ -191,26 +191,6 @@ const ArtworkTable: React.FC = () => {
           <h2 className="text-xl font-semibold text-gray-900">
             Art Institute of Chicago Collection
           </h2>
-          <span className="text-sm text-gray-500">
-            {totalRecords.toLocaleString()} artworks
-          </span>
-        </div>
-        <div className="flex items-center gap-3">
-          {!selectionSummary.isEmpty && (
-            <div className="flex items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">
-                <i className="pi pi-check-circle text-xs" />
-                {selectionSummary.selectedCount.toLocaleString()} selected
-              </span>
-              <button
-                onClick={onClearSelection}
-                className="p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-full transition-colors"
-                aria-label="Clear selection"
-              >
-                <i className="pi pi-times text-sm" />
-              </button>
-            </div>
-          )}
         </div>
       </div>
 
@@ -388,13 +368,13 @@ const ArtworkTable: React.FC = () => {
               </span>
             )}
           </div>
-          <button
+          <Button
             onClick={onClearSelection}
             className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white border border-white/50 hover:bg-white/20 rounded-md transition-colors"
           >
             <i className="pi pi-times text-xs" />
             Clear All
-          </button>
+          </Button>
         </div>
       )}
     </div>
